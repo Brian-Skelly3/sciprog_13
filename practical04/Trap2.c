@@ -2,39 +2,43 @@
 #include <math.h>
 
 
-float degtorad(float arg){
+float degtorad(float arg){   //Convert degrees to radians
    return((M_PI*arg)/180.0);
 }
 
-float trap_rule(float a, float b, int N, float array[N+1]){
+float trap_rule(int N, float array[N+1]){   //Finds area under curve using trapazoidal rule. y-coordinates are array
+
    float sum = array[0] + array[N];
    int i;
    for(i = 1; i<N; i++){
       sum += 2*array[i];
    }
 
-   return (b-a)*(sum)/(2*N);
+   return degtorad((60.0-0.0))*(sum)/(2*N);
 
 }
 
 
 int main(void){
-   int N, i;
-   float start, end, step, tanarr[N+1], result;
-   N = 17;
+   int N=12, i=0;   //N is number of steps
+   float start, end, tanarr[N+1], estimate;
    start = 0.0;
    end = 60.0;
-   step = (end-start)/N;
-   
-   for(i = 0; i<N+1; i++){
-      tanarr[i] = tan(degtorad(step*i));
+
+   printf("Values are\n");
+
+   for(i = 0; i<=N; i++){
+      tanarr[i] = tan(degtorad(5.0*i));   //Stepsize is 5.0
+      printf("tanarr[%d] =  %f\n", i, tanarr[i]);
+
    }
-   
-   result = trap_rule(degtorad(start), degtorad(end), N, tanarr);
-   printf("The answer is %f, start = %f, end =  %f, step = %f, N = %d, tanarr = %f\n", result, degtorad(start), degtorad(end), step,  N, tanarr);
+
+   estimate = trap_rule(N, tanarr);  //Estimate area under tan(x) using trapazoidal rule
+   printf("The estimate is %f\n", estimate);
 
 return 0;
 
 }
+
 
 

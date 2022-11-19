@@ -2,13 +2,13 @@
 #include <math.h>
 
 int main(void){
-  double  firstpart, secondpart, sum, estimate;
+  double  firstarg, secondarg, sum, estimate;
   int i, N;
 
   N = 12;
   firstarg  = (M_PI/3-0)/(2*N);      //(b-a)/2N
   secondarg = tan(0) + tan(M_PI/3);  //first and last argument
-  
+
 
   //middle term of trapazoidal rule
   sum = 0.0;
