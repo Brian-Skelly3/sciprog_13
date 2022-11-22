@@ -29,7 +29,7 @@ int main(void){
    //get number of lines
    int n = num_lines(filename);
 
-   f = fopen(filename, "r");
+   f = fopen(filename, "r");   //Import the square matrix file
    
 
    int i, j;
@@ -59,4 +59,3 @@ int main(void){
    return 0;
 
 }
-
