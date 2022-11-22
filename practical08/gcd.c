@@ -19,7 +19,7 @@ int main(void){
       return 1;
 }
 
-   //Call the functions
+   //Call and use the functions created
    printf("Iterative gcd(%d, %d = %d)\n", a, b, itergcd(a, b));
    printf("Recursive gcd(%d, %d = %d)\n", a, b, recurgcd(a, b));
 
@@ -27,11 +27,10 @@ int main(void){
 }
 
 
-
 int itergcd(int a, int b){
    int temp;
    while(b != 0){
-      temp = b;
+      temp = b;    //Using a temporary variable to give new values to a and b
       b = a%b;
       a = temp;
    }
