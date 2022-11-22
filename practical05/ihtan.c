@@ -29,9 +29,7 @@ int main(void){
 
 
 return 0;
-
 }
-
 
 double arctanh1(const double x, const double delta){   //Estimate using MacLaurin series
    double arcTan = 0;  //Approx. result
@@ -46,17 +44,9 @@ double arctanh1(const double x, const double delta){   //Estimate using MacLauri
       n++;
    }
    return arcTan;
-
 }
 
 
 double arctanh2(const double x){   //Exact value using logarithms
    return((log(1+x)-log(1-x))/2);
 }
-
-
-
-
-
-
-
