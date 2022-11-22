@@ -2,9 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-
 int factorial(int n);
-
 
 int main(void){
 
@@ -29,15 +27,12 @@ int main(void){
 
    }
 
-
    free(terms);
    printf("\ne is estimated as %1.14lf, with difference %1.14lf\n", e, e-exp(1.0));
 
    return 0;
 
 }
-
-
 
 
 int factorial(int n){
@@ -49,7 +44,6 @@ int factorial(int n){
       return 1;
    }
    else{
-      return(n*factorial(n-1));
+      return(n*factorial(n-1));   //Using recursion to create the factorial function
    }
 }
-
